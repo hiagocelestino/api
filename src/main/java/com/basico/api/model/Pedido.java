@@ -1,9 +1,10 @@
 package com.basico.api.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,22 +20,22 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private Date data;
+	private LocalDateTime data;
 	
 	private Double desconto;
 	
 	private Long id_cliente;
 	
-	@OneToMany(mappedBy="pedido")
+	@OneToMany(mappedBy="pedido", cascade = CascadeType.ALL)
 	private List<ItemPedido> itens = new ArrayList<>();
 	
 	public Pedido() {
 		
 	}
 
-	public Pedido(Date data, Double desconto, String status, Long id_cliente) {
+	public Pedido(Double desconto, Long id_cliente) {
 		super();
-		this.data = data;
+		this.data = LocalDateTime.now();
 		this.desconto = desconto;
 		this.id_cliente = id_cliente;
 	}
@@ -47,11 +48,11 @@ public class Pedido {
 		this.id = id;
 	}
 
-	public Date getData() {
+	public LocalDateTime getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
 

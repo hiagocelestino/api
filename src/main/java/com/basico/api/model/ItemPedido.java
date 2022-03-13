@@ -29,9 +29,9 @@ public class ItemPedido {
 		
 	}
 
-	public ItemPedido(Double preco_un, int quantidade, Produto produto, Pedido pedido) {
+	public ItemPedido(int quantidade, Produto produto, Pedido pedido) {
 		super();
-		this.preco_un = preco_un;
+		this.preco_un = produto.getPreco();
 		this.quantidade = quantidade;
 		this.produto = produto;
 		this.pedido = pedido;

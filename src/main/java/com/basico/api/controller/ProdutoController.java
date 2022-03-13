@@ -12,37 +12,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.basico.api.model.Produto;
-import com.basico.api.service.ProdutoService;
+import com.basico.api.service.impl.ProdutoServiceImpl;
 
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
 	
 	@Autowired
-	ProdutoService produtoService; 
+	ProdutoServiceImpl produtoServiceImpl; 
 	
 	@GetMapping
 	public Iterable<Produto> obterTodosProdutos(){
-		return produtoService.obterTodosProdutos();
+		return produtoServiceImpl.obterTodosProdutos();
 	}
 	
 	@GetMapping("/{id}")
 	public Optional<Produto> obterProdutoPeloId(@PathVariable Long id) {
-		return produtoService.obterProdutoPeloId(id);
+		return produtoServiceImpl.obterProdutoPeloId(id);
 	}
 	
 	@PostMapping
 	public Produto cadastrarProduto(Produto produto) {
-		return produtoService.cadastrarProduto(produto);
+		return produtoServiceImpl.cadastrarProduto(produto);
 	}
 	
 	@PutMapping
 	public Produto alterarProduto(Produto produto) {
-		return produtoService.alterarProduto(produto);
+		return produtoServiceImpl.alterarProduto(produto);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void deletarProduto(@PathVariable Long id) {
-		produtoService.deletarProduto(id);
+		produtoServiceImpl.deletarProduto(id);
 	}
 }

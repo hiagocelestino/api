@@ -10,7 +10,7 @@ public interface PedidoService{
 	
 	public Optional<Pedido> ObterPedidoPeloId(Long id);
 	
-	public Pedido cadastrarPedido(Pedido pedido);
+	public Pedido cadastrarPedido(Long cliente_id, Long produto_id, Double desconto, int quantidade);
 	
 	public Pedido editarPedido(Pedido pedido);
 	
