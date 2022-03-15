@@ -6,11 +6,11 @@ import com.basico.api.model.Pedido;
 
 public interface PedidoService{
 	
-	public Iterable<Pedido> obterTodosPedidos();
+	public Optional<Iterable<Pedido>> obterTodosPedidos(Long clienteId);
 	
 	public Optional<Pedido> ObterPedidoPeloId(Long id);
 	
-	public Pedido cadastrarPedido(Long cliente_id, Long produto_id, Double desconto, int quantidade);
+	public Pedido cadastrarPedido(Long clienteId, Long produtoId, Double desconto, int quantidade);
 	
 	public Pedido editarPedido(Pedido pedido);
 	

@@ -6,8 +6,6 @@ import com.basico.api.model.Cliente;
 
 public interface ClienteService {
 	
-	public Iterable<Cliente> obterTodosClientes();
-	
 	public Optional<Cliente> obterClientePeloId(Long id);
 	
 	public Cliente cadastrarCliente(Cliente cliente);

@@ -12,39 +12,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.basico.api.model.Cliente;
-import com.basico.api.service.impl.ClienteServiceImpl;
+import com.basico.api.service.ClienteService;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/clientes")
 public class ClienteController {
 	
 	@Autowired
-	ClienteServiceImpl clienteServiceImpl;
+	ClienteService clienteService;
 	
-	@GetMapping
-	public Iterable<Cliente> obterTodosClientes() {
-		return clienteServiceImpl.obterTodosClientes();
-	}
-	
-	@GetMapping(path="/{id}")
+	@GetMapping("/{id}")
 	public Optional<Cliente> obterClientePeloId(@PathVariable Long id){
-		return clienteServiceImpl.obterClientePeloId(id);
+		return clienteService.obterClientePeloId(id);
 	}
 	
 	@PostMapping
 	public Cliente cadastrarCliente(Cliente cliente) {
-		clienteServiceImpl.cadastrarCliente(cliente);
+		clienteService.cadastrarCliente(cliente);
 		return cliente;
 	}
 	
 	@PutMapping
 	public Cliente alterarCliente(Cliente cliente) {
-		return clienteServiceImpl.alterarCliente(cliente);
+		return clienteService.alterarCliente(cliente);
 	}
 	
-	@DeleteMapping(path="/{id}")
+	@DeleteMapping("/{id}")
 	public void deletarCliente(@PathVariable Long id) {
-		clienteServiceImpl.deletarCliente(id);
+		clienteService.deletarCliente(id);
 	}
 
 }

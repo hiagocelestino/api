@@ -15,10 +15,6 @@ public class ClienteServiceImpl implements ClienteService{
 	@Autowired
 	ClienteRepository clienteRepository;
 	
-	public Iterable<Cliente> obterTodosClientes(){
-		return clienteRepository.findAll();
-	}
-	
 	public Optional<Cliente> obterClientePeloId(Long id) {
 		return clienteRepository.findById(id);
 	}

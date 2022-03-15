@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.basico.api.model.Endereco;
-import com.basico.api.service.impl.EnderecoServiceImpl;
+import com.basico.api.service.EnderecoService;
 
 @RestController
-@RequestMapping("/endereco")
+@RequestMapping("/enderecos")
 public class EnderecoController {
 	
 	@Autowired
-	EnderecoServiceImpl enderecoServiceImpl;
+	EnderecoService enderecoService;
 	
-	@GetMapping("/{id_cliente}")
-	public Iterable<Endereco> obterEnderecosCliente(@PathVariable Long id_cliente){
-		return enderecoServiceImpl.obterTodosEnderecos(id_cliente);	
+	@GetMapping("/{id}")
+	public Iterable<Endereco> obterEnderecosCliente(@PathVariable Long id){
+		return enderecoService.obterTodosEnderecos(id);	
 	}
 	
 	@PostMapping
 	public Endereco cadastrarEndereco(Endereco endereco) {
-		return enderecoServiceImpl.cadastrarEndereco(endereco);
+		return enderecoService.cadastrarEndereco(endereco);
 	}
 	
 	@PutMapping
 	public Endereco alterarEndereco(Endereco endereco) {
-		return enderecoServiceImpl.alterarEndereco(endereco);
+		return enderecoService.alterarEndereco(endereco);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void deletarEndereco(@PathVariable Long id) {
-		enderecoServiceImpl.deletarEndereco(id);
+		enderecoService.deletarEndereco(id);
 	}
 }

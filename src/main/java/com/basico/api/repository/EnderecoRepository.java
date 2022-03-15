@@ -8,7 +8,7 @@ import com.basico.api.model.Endereco;
 
 public interface EnderecoRepository extends CrudRepository<Endereco, Long> {
 	
-	@Query(value = "Select * from api.enderecos where id_cliente = ?", nativeQuery = true)
-	public Iterable<Endereco> findByIdCliente(@Param("id_cliente") Long id_cliente);
+	@Query(value = "Select * from api.enderecos where cliente_id = ?", nativeQuery = true)
+	public Iterable<Endereco> findByIdCliente(@Param("cliente_id") Long cliente_id);
 
 }

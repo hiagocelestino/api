@@ -24,28 +24,26 @@ public class PedidoServiceImpl implements PedidoService {
 	@Autowired
 	ItemPedidoRepository itemPedidoRepository;
 	
-	public Iterable<Pedido> obterTodosPedidos(){
-		return pedidoRepository.findAll();
+	public Optional<Iterable<Pedido>> obterTodosPedidos(Long clienteId){
+		return pedidoRepository.findAllByClienteId(clienteId);
 	}
 	
 	public Optional<Pedido> ObterPedidoPeloId(Long id) {
 		return pedidoRepository.findById(id);
 	}
 	
-	public Pedido cadastrarPedido(Long cliente_id, Long produto_id, Double desconto, int quantidade) {
+	public Pedido cadastrarPedido(Long clienteId, Long produtoId, Double desconto, int quantidade) {
 		try {
-			Optional<Produto> retorno = produtoServiceImpl.obterProdutoPeloId(produto_id);
+			Optional<Produto> retorno = produtoServiceImpl.obterProdutoPeloId(produtoId);
 			if(retorno.isPresent()) {
 				
 				Produto produto = retorno.get();
 				
-				Pedido pedido = new Pedido(desconto, cliente_id);
+				Pedido pedido = new Pedido(desconto, clienteId);
 				
 				ItemPedido item = new ItemPedido(quantidade, produto, pedido);
 				
-				pedido.adicionarItem(item);
-				
-				System.out.println("AQUI");
+				pedido.adicionarItem(item);	
 				
 				return pedidoRepository.save(pedido);	
 			}
@@ -53,7 +51,7 @@ public class PedidoServiceImpl implements PedidoService {
 				throw new IllegalArgumentException("Produto indísponivel.");
 			}
 		} catch (Exception e) {
-			throw new IllegalArgumentException("Não foi possível realizar o pedido!");
+			throw new IllegalArgumentException("Não foi possível realizar o pedido!" + e);
 		}
 	}
 	
