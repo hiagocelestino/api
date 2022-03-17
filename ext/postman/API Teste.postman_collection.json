@@ -1,0 +1,626 @@
+{
+	"info": {
+		"_postman_id": "a062a54a-9dca-4d3c-89b1-052c6fee2528",
+		"name": "API Teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Obter Todos Os Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clientes/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clientes",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Cliente Pelo Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clientes/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "Antonio Junior",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "77788899901",
+									"type": "text"
+								},
+								{
+									"key": "celular",
+									"value": "3132659865",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/clientes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "nome",
+									"value": "Antonio Jr",
+									"type": "default"
+								},
+								{
+									"key": "cpf",
+									"value": "32532612305",
+									"type": "default"
+								},
+								{
+									"key": "celular",
+									"value": "3432659865",
+									"type": "default"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"type": "default"
+								},
+								{
+									"key": "endereco",
+									"value": "1",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/clientes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Pelo Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clientes/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereco",
+			"item": [
+				{
+					"name": "Obter Todos Endereco",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_cliente",
+								"value": "1",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/enderecos/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enderecos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Endereco Pelo Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/enderecos/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enderecos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Endereco",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "clienteId",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "logradouro",
+									"value": "Rua Rodolfo Mallard",
+									"type": "default"
+								},
+								{
+									"key": "numero",
+									"value": "708",
+									"type": "default"
+								},
+								{
+									"key": "bairro",
+									"value": "Centro",
+									"type": "default"
+								},
+								{
+									"key": "cep",
+									"value": "39280000",
+									"type": "default"
+								},
+								{
+									"key": "cidade",
+									"value": "Buritizeiro",
+									"type": "default"
+								},
+								{
+									"key": "estado",
+									"value": "Minas Gerais",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/enderecos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Endereco",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "logradouro",
+									"value": "Av Fleming",
+									"type": "default"
+								},
+								{
+									"key": "numero",
+									"value": "926",
+									"type": "default"
+								},
+								{
+									"key": "bairro",
+									"value": "Ouro Preto",
+									"type": "default"
+								},
+								{
+									"key": "cep",
+									"value": "31310490",
+									"type": "default"
+								},
+								{
+									"key": "cidade",
+									"value": "Belo Horizonte",
+									"type": "default"
+								},
+								{
+									"key": "estado",
+									"value": "Minas Gerais",
+									"type": "default"
+								},
+								{
+									"key": "clienteId",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/enderecos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Pelo Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/enderecos/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"enderecos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Obter Todos Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pedidos/todos/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos",
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Pedido Pelo Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pedidos/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clienteId\": 1,\r\n    \"produtoId\": 3,\r\n    \"desconto\": 0.05,\r\n    \"quantidade\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pedidos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "nome",
+									"value": "Tablet Samsung",
+									"type": "default"
+								},
+								{
+									"key": "descricao",
+									"value": "Possui 20''",
+									"type": "default"
+								},
+								{
+									"key": "valor",
+									"value": "789.99",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/pedidos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pedidos/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Obter Todos Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/produtos/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Produto Pelo Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/produtos/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "iPhone X",
+									"type": "default"
+								},
+								{
+									"key": "descricao",
+									"value": "Tela Grande",
+									"type": "default"
+								},
+								{
+									"key": "preco",
+									"value": "3999.99",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Produto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "nome",
+									"value": "iPad",
+									"type": "default"
+								},
+								{
+									"key": "descricao",
+									"value": "Possui 20''",
+									"type": "default"
+								},
+								{
+									"key": "valor",
+									"value": "789.99",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Produto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/produtos/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
