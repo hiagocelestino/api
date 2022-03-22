@@ -34,7 +34,7 @@ public class Cliente {
 	private String celular;
 	
 	@Column(name = "status")
-	private boolean status;
+	private boolean status = true;
 	
 	@OneToMany
 	@JoinColumn(name="clienteId")
@@ -48,13 +48,11 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nome, String cpf, String celular, boolean status, List<Endereco> enderecos) {
+	public Cliente(String nome, String cpf, String celular) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.celular = celular;
-		this.status = status;
-		this.enderecos = enderecos;
 	}
 
 	public Long getId() {

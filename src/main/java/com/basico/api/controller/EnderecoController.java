@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.basico.api.dto.EnderecoDTO;
 import com.basico.api.model.Endereco;
 import com.basico.api.service.EnderecoService;
 
@@ -25,13 +27,15 @@ public class EnderecoController {
 	}
 	
 	@PostMapping
-	public Endereco cadastrarEndereco(Endereco endereco) {
-		return enderecoService.cadastrarEndereco(endereco);
+	public EnderecoDTO cadastrarEndereco(@RequestBody EnderecoDTO enderecoDTO) {
+		Endereco endereco = enderecoDTO.toEndereco();
+		enderecoService.cadastrarEndereco(endereco);
+		return EnderecoDTO.toDTO(endereco);
 	}
 	
 	@PutMapping
-	public Endereco alterarEndereco(Endereco endereco) {
-		return enderecoService.alterarEndereco(endereco);
+	public EnderecoDTO alterarEndereco(@RequestBody Endereco endereco) {
+		return EnderecoDTO.toDTO(enderecoService.alterarEndereco(endereco));
 	}
 	
 	@DeleteMapping("/{id}")

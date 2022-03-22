@@ -50,29 +50,13 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "nome",
-									"value": "Antonio Junior",
-									"type": "text"
-								},
-								{
-									"key": "cpf",
-									"value": "77788899901",
-									"type": "text"
-								},
-								{
-									"key": "celular",
-									"value": "3132659865",
-									"type": "text"
-								},
-								{
-									"key": "status",
-									"value": "true",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Fulano de Tal\",\r\n    \"cpf\": \"34521902812\",\r\n    \"celular\": \"3132659865\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/clientes",
@@ -92,40 +76,13 @@
 						"method": "PUT",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "3",
-									"type": "default"
-								},
-								{
-									"key": "nome",
-									"value": "Antonio Jr",
-									"type": "default"
-								},
-								{
-									"key": "cpf",
-									"value": "32532612305",
-									"type": "default"
-								},
-								{
-									"key": "celular",
-									"value": "3432659865",
-									"type": "default"
-								},
-								{
-									"key": "status",
-									"value": "true",
-									"type": "default"
-								},
-								{
-									"key": "endereco",
-									"value": "1",
-									"type": "default",
-									"disabled": true
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"nome\": \"Fulano De Tal\",\r\n    \"cpf\": \"13890713304\",\r\n    \"celular\": \"3132659865\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/clientes",
@@ -218,44 +175,8 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "clienteId",
-									"value": "1",
-									"type": "default"
-								},
-								{
-									"key": "logradouro",
-									"value": "Rua Rodolfo Mallard",
-									"type": "default"
-								},
-								{
-									"key": "numero",
-									"value": "708",
-									"type": "default"
-								},
-								{
-									"key": "bairro",
-									"value": "Centro",
-									"type": "default"
-								},
-								{
-									"key": "cep",
-									"value": "39280000",
-									"type": "default"
-								},
-								{
-									"key": "cidade",
-									"value": "Buritizeiro",
-									"type": "default"
-								},
-								{
-									"key": "estado",
-									"value": "Minas Gerais",
-									"type": "default"
-								}
-							],
+							"mode": "raw",
+							"raw": "{\r\n    \"clienteId\":6,\r\n    \"logradouro\": \"Rua Do ABCDario\",\r\n    \"numero\": 260,\r\n    \"bairro\": \"Centro\",\r\n    \"cep\": \"31350500\",\r\n    \"cidade\": \"Testown\",\r\n    \"estado\": \"Minas Land\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -280,49 +201,13 @@
 						"method": "PUT",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "1",
-									"type": "default"
-								},
-								{
-									"key": "logradouro",
-									"value": "Av Fleming",
-									"type": "default"
-								},
-								{
-									"key": "numero",
-									"value": "926",
-									"type": "default"
-								},
-								{
-									"key": "bairro",
-									"value": "Ouro Preto",
-									"type": "default"
-								},
-								{
-									"key": "cep",
-									"value": "31310490",
-									"type": "default"
-								},
-								{
-									"key": "cidade",
-									"value": "Belo Horizonte",
-									"type": "default"
-								},
-								{
-									"key": "estado",
-									"value": "Minas Gerais",
-									"type": "default"
-								},
-								{
-									"key": "clienteId",
-									"value": "1",
-									"type": "default"
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"clienteId\":6,\r\n    \"logradouro\": \"Rua Do ABCDario\",\r\n    \"numero\": 260,\r\n    \"bairro\": \"Centro\",\r\n    \"cep\": \"31350500\",\r\n    \"cidade\": \"Testown\",\r\n    \"estado\": \"Minas LandLand\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/enderecos",
@@ -428,29 +313,13 @@
 						"method": "PUT",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "1",
-									"type": "default"
-								},
-								{
-									"key": "nome",
-									"value": "Tablet Samsung",
-									"type": "default"
-								},
-								{
-									"key": "descricao",
-									"value": "Possui 20''",
-									"type": "default"
-								},
-								{
-									"key": "valor",
-									"value": "789.99",
-									"type": "default"
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/pedidos",
@@ -529,24 +398,13 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "nome",
-									"value": "iPhone X",
-									"type": "default"
-								},
-								{
-									"key": "descricao",
-									"value": "Tela Grande",
-									"type": "default"
-								},
-								{
-									"key": "preco",
-									"value": "3999.99",
-									"type": "default"
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"iPhone X\",\r\n    \"descricao\": \"Tela Grande\",\r\n    \"preco\": 3999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/produtos",
@@ -566,29 +424,13 @@
 						"method": "PUT",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "1",
-									"type": "default"
-								},
-								{
-									"key": "nome",
-									"value": "iPad",
-									"type": "default"
-								},
-								{
-									"key": "descricao",
-									"value": "Possui 20''",
-									"type": "default"
-								},
-								{
-									"key": "valor",
-									"value": "789.99",
-									"type": "default"
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"nome\": \"iPhone X\",\r\n    \"descricao\": \"Tela Media\",\r\n    \"preco\": 3999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/produtos",

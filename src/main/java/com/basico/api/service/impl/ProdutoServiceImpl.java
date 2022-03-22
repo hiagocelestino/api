@@ -30,6 +30,10 @@ public class ProdutoServiceImpl implements ProdutoService{
 	
 	public Produto alterarProduto(Produto produto) {
 		try {
+			System.out.println(produto.getId());
+			System.out.println(produto.getNome());
+			System.out.println(produto.getDescricao());
+			System.out.println(produto.getPreco());
 			Optional<Produto> retorno = obterProdutoPeloId(produto.getId());
 			if(retorno.isPresent()) {
 				produtoRepository.save(produto);

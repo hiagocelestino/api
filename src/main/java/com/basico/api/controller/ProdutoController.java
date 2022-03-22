@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.basico.api.dto.ProdutoDTO;
 import com.basico.api.model.Produto;
 import com.basico.api.service.ProdutoService;
 
@@ -32,13 +34,14 @@ public class ProdutoController {
 	}
 	
 	@PostMapping
-	public Produto cadastrarProduto(Produto produto) {
-		return produtoService.cadastrarProduto(produto);
+	public ProdutoDTO cadastrarProduto(@RequestBody ProdutoDTO produtoDTO) {
+		Produto produto = produtoDTO.toProduto();
+		return ProdutoDTO.toDTO(produtoService.cadastrarProduto(produto));
 	}
 	
 	@PutMapping
-	public Produto alterarProduto(Produto produto) {
-		return produtoService.alterarProduto(produto);
+	public ProdutoDTO alterarProduto(@RequestBody Produto produto) {
+		return ProdutoDTO.toDTO(produtoService.alterarProduto(produto));
 	}
 	
 	@DeleteMapping("/{id}")

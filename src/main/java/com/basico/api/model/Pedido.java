@@ -25,15 +25,18 @@ public class Pedido {
 	private Long id;
 	
 	@Column(name = "data")
-	private LocalDateTime data;
+	private LocalDateTime data = LocalDateTime.now();
 	
 	@Column(name = "desconto")
 	@Min(0)
 	@Max(1)
 	private Double desconto;
 	
+	@Column(name = "vlr_total")
+	private Double vlrTotal;
+	
 	@Column(name = "status")
-	private String status;
+	private String status = "Análise";
 	
 	@Column(name = "clienteId")
 	private Long clienteId;
@@ -47,9 +50,7 @@ public class Pedido {
 
 	public Pedido(Double desconto, Long clienteId) {
 		super();
-		this.data = LocalDateTime.now();
 		this.desconto = desconto;
-		this.status = "Processando";
 		this.clienteId = clienteId;
 	}
 
@@ -77,6 +78,14 @@ public class Pedido {
 		this.desconto = desconto;
 	}
 	
+	public Double getVlrTotal() {
+		return vlrTotal;
+	}
+
+	public void setVlrTotal(Double vlrTotal) {
+		this.vlrTotal = vlrTotal;
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -85,16 +94,25 @@ public class Pedido {
 		this.status = status;
 	}
 
-	public Long getClenteId() {
+	public Long getClienteId() {
 		return clienteId;
 	}
 
-	public void setClenteId(Long id_cliente) {
-		this.clienteId = id_cliente;
+	public void setClienteId(Long clienteId) {
+		this.clienteId = clienteId;
+	}
+	
+	public List<ItemPedido> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<ItemPedido> itens) {
+		this.itens = itens;
 	}
 	
 	public void adicionarItem(ItemPedido item) {
 		item.setPedido(this);
 		this.itens.add(item);
 	}
+
 }
